@@ -25,8 +25,8 @@ export class ColorBox extends Component {
             className={`copy-overlay ${copied && "show"}`}
           />
           <div className={`copy-msg ${copied && "show"}`}>
-              <h1>COPIED!</h1>
-              <p>{this.props.background}</p>
+            <h1>COPIED!</h1>
+            <p>{this.props.background}</p>
           </div>
           <div className="copy-container">
             <div className="box-content">
