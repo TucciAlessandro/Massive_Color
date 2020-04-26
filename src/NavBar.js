@@ -4,7 +4,7 @@ import { MenuItem, Icon } from "@material-ui/core";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
@@ -27,25 +27,25 @@ export class NavBar extends Component {
     this.setState({ open: false });
   }
   render() {
-    const { level, changeLevel } = this.props;
+    const { level, changeLevel, showingAllColors } = this.props;
     const { format, open } = this.state;
     return (
       <header className="NavBar">
         <div className="logo">
-          <Link to='/'>reactcolorpicker</Link>
+          <Link to="/">reactcolorpicker</Link>
         </div>
-        <div className="slider-container">
-          <span>Level: {level}</span>
-          <div className="slider">
-            <Slider
-              defaultValue={level}
-              min={100}
-              max={900}
-              onAfterChange={changeLevel}
-              step={100}
-            />
-          </div>
-        </div>
+        {showingAllColors &&  <div className="slider-container">
+            <span>Level: {level}</span>
+            <div className="slider">
+              <Slider
+                defaultValue={level}
+                min={100}
+                max={900}
+                onAfterChange={changeLevel}
+                step={100}
+              />
+            </div>
+          </div>}
         <div className="select-container">
           <Select value={format} onChange={this.handleFormatChange}>
             <MenuItem value="hex">HEX- #ffffff</MenuItem>
