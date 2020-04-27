@@ -15,7 +15,7 @@ import "rc-slider/assets/index.css";
 export class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { format: "hex", open: false };
+    this.state = { format: "hex", open: false };    
     this.handleFormatChange = this.handleFormatChange.bind(this);
     this.closeSnackBar = this.closeSnackBar.bind(this);
   }

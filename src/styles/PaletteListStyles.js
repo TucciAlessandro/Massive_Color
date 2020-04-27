@@ -1,3 +1,5 @@
+import { withTheme } from "@material-ui/styles";
+
 export default {
     root: {
         backgroundColor: "blue",
@@ -18,6 +20,10 @@ export default {
         width: "100%",
         justifyContent: "space-between",
         color: "white",
+        alignItems: 'center',
+        '& a':{
+          color: 'white',
+        }
       },
       palettes: {
         boxSizing: "border-box",
