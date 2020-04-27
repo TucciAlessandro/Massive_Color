@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
-import "./NavBar.css";
+import "../NavBar.css";
 
 export class NavBar extends Component {
   constructor(props) {
