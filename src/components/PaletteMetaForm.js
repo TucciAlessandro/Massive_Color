@@ -42,8 +42,11 @@ export class PaletteMetaForm extends Component {
 
   savePalette = (emoji) => {
     console.log(emoji.native);
-    const newPalette ={ paletteName: this.state.newPaletteName, emoji: emoji.native}
-    this.props.handleSubmit(newPalette)
+    const newPalette = {
+      paletteName: this.state.newPaletteName,
+      emoji: emoji.native,
+    };
+    this.props.handleSubmit(newPalette);
   };
 
   render() {
@@ -51,8 +54,8 @@ export class PaletteMetaForm extends Component {
     const { hideForm, handleSubmit } = this.props;
     return (
       <div>
-        <Dialog open={this.state.stage === "emoji"} onClose={hideForm}> 
-          <Picker onSelect={this.savePalette} title='Pick a Palette Emoji' />
+        <Dialog open={this.state.stage === "emoji"} onClose={hideForm}>
+          <Picker onSelect={this.savePalette} title="Pick a Palette Emoji" />
         </Dialog>
         <Dialog
           open={this.state.stage === "form"}
