@@ -19,8 +19,19 @@ class App extends React.Component {
   };
 
   savePalette = (newPalette) => {
-    this.setState({ palettes: [...this.state.palettes, newPalette] }, this.syncLocalStorage);
+    this.setState(
+      { palettes: [...this.state.palettes, newPalette] },
+      this.syncLocalStorage
+    );
+  };
 
+  deletePalette = (id) => {
+    this.setState(
+      (st) => ({
+        palettes: st.palettes.filter((palette) => palette.id !== id),
+      }),
+      this.syncLocalStorage
+    );
   };
 
   syncLocalStorage = () => {
@@ -29,6 +40,7 @@ class App extends React.Component {
       JSON.stringify(this.state.palettes)
     );
   };
+  
   render() {
     return (
       <div>
@@ -48,7 +60,7 @@ class App extends React.Component {
             exact
             path="/"
             render={(routeProps) => (
-              <PaletteList palettes={this.state.palettes} {...routeProps} />
+              <PaletteList palettes={this.state.palettes} deletePalette={this.deletePalette} {...routeProps} />
             )}
           />
           <Route
