@@ -7,8 +7,10 @@ import PaletteList from "./components/PaletteList";
 import SingleColorPalette from "./components/SingleColorPalette";
 import NewPaletteForm from "./components/NewPaletteForm";
 
+const savedPalettes = JSON.parse(window.localStorage.getItem("palettes"));
+
 class App extends React.Component {
-  state = { palettes: seedColors };
+  state = { palettes: savedPalettes || seedColors };
 
   findPalette = (id) => {
     return this.state.palettes.find((palette) => {
@@ -17,9 +19,16 @@ class App extends React.Component {
   };
 
   savePalette = (newPalette) => {
-    this.setState({ palettes: [...this.state.palettes, newPalette] });
+    this.setState({ palettes: [...this.state.palettes, newPalette] }, this.syncLocalStorage);
+
   };
 
+  syncLocalStorage = () => {
+    window.localStorage.setItem(
+      "palettes",
+      JSON.stringify(this.state.palettes)
+    );
+  };
   render() {
     return (
       <div>
