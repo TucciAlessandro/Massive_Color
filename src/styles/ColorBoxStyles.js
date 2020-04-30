@@ -107,6 +107,7 @@ export default {
     transform: "scale(0.1)",
     opacity: "0",
     color: "white",
+    zIndex: '-5',
     flexDirection: "column",
     "& h1": {
       fontWeight: "400",
