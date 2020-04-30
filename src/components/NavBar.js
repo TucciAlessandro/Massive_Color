@@ -1,21 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
-
 import Select from "@material-ui/core/Select";
-import {MenuItem} from "@material-ui/core";
+import { MenuItem } from "@material-ui/core";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Slider from "rc-slider";
-
-import styles from "../styles/NavBarStyles";
 import "rc-slider/assets/index.css";
+import styles from "../styles/NavBarStyles";
 
 export class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.state = { format: "hex", open: false };    
+    this.state = { format: "hex", open: false };
     this.handleFormatChange = this.handleFormatChange.bind(this);
     this.closeSnackBar = this.closeSnackBar.bind(this);
   }
@@ -66,7 +64,7 @@ export class NavBar extends Component {
               Format Changed to {format.toUpperCase()}
             </span>
           }
-          contentProps={{ "aria-describedby": "message-id" }}
+          contentprops={{ "aria-describedby": "message-id" }}
           onClose={this.closeSnackBar}
           action={[
             <IconButton

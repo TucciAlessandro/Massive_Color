@@ -50,15 +50,15 @@ export class PaletteMetaForm extends Component {
   };
 
   render() {
-    const { newPaletteName, open } = this.state;
-    const { hideForm, handleSubmit } = this.props;
+    const { newPaletteName, stage } = this.state;
+    const { hideForm} = this.props;
     return (
       <div>
         <Dialog open={this.state.stage === "emoji"} onClose={hideForm}>
           <Picker onSelect={this.savePalette} title="Pick a Palette Emoji" />
         </Dialog>
         <Dialog
-          open={this.state.stage === "form"}
+          open={stage === "form"}
           onClose={hideForm}
           aria-labelledby="form-dialog-title"
         >

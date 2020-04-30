@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import MiniPalette from "../components/MiniPalette";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { withStyles } from "@material-ui/styles";
-import styles from "../styles/PaletteListStyles";
+
 import Dialog from "@material-ui/core/Dialog";
 import Avatar from "@material-ui/core/Avatar";
 import List from "@material-ui/core/List";
@@ -13,8 +11,11 @@ import CheckIcon from "@material-ui/icons/Check";
 import CloseIcon from "@material-ui/icons/Close";
 import ListItemText from "@material-ui/core/ListItemText";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import { withStyles } from "@material-ui/styles";
+import MiniPalette from "../components/MiniPalette";
 import blue from "@material-ui/core/colors/blue";
 import red from "@material-ui/core/colors/red";
+import styles from "../styles/PaletteListStyles";
 
 class PaletteList extends Component {
   state = {
@@ -36,14 +37,14 @@ class PaletteList extends Component {
 
   goToPalette = (id) => {
     this.props.history.push(`/palette/${id}`);
-  }
-  
+  };
+
   render() {
-    const { palettes, classes, deletePalette } = this.props;
-    const { openDeleteDialog, deletingId } = this.state;
+    const { palettes, classes } = this.props;
+    const { openDeleteDialog } = this.state;
 
     return (
-      <div className={this.props.classes.root}>
+      <div className={classes.root}>
         <div className={classes.container}>
           <nav className={classes.nav}>
             <h1 className={classes.heading}>React Colors!</h1>
