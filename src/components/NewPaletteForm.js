@@ -18,7 +18,7 @@ class NewPaletteForm extends React.Component {
     maxColors: 20,
   };
   state = {
-    open: false,
+    open: true,
     colors: this.props.palettes[0].colors,
   };
 
