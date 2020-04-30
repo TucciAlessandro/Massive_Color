@@ -13,7 +13,7 @@ import PaletteFormNav from "./PaletteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
 import styles from "../styles/NewPaletteFormStyles";
 
-class NewPaletteForm extends React.Component {
+class NewPaletteForm extends Component {
   static defaultProps = {
     maxColors: 20,
   };
